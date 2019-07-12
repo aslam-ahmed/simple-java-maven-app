@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        bat 'mvn test'
+        bat 'mvn -Dhttps.protocols=TLSv1.2 test'
       }
     }
   }
