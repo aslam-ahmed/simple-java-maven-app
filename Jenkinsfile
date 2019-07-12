@@ -10,6 +10,11 @@ pipeline {
       steps {
         bat 'mvn -Dhttps.protocols=TLSv1.2 test'
       }
+      post{
+        always{
+          junit 'target/surefire-reports/*.xml'
+        }
+      }
     }
   }
 }
